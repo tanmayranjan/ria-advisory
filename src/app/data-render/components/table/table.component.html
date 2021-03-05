@@ -1,0 +1,18 @@
+<p>{{title}} :</p>
+<table>
+    <tr>
+        <th *ngFor = "let i of keys">{{i}}</th>
+    </tr>
+    <tr>
+        <td *ngFor = "let i of keys;let ind = index">
+            <span *ngIf="checkArray(newJsonData[ind][i]);else elseBlock">
+                <button (click)="createComp(newJsonData[ind][i] , i)">Click Me</button>
+            </span>
+            <ng-template #elseBlock>
+                <span>{{newJsonData[ind][i]}}</span> 
+            </ng-template>
+        </td>
+    </tr>
+   
+    
+</table>
